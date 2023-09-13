@@ -18,7 +18,7 @@ services:
   backend:
     depends_on:
       - mongodb
-    build: ./Backend
+    build: ./backend
     restart: unless-stopped
     env_file: ./.env
     ports:
@@ -38,7 +38,7 @@ services:
     depends_on:
       - backend
     build:
-      context: ./Frontend
+      context: ./frontend
       args:
         - REACT_APP_API_BASE_URL=$CLIENT_API_BASE_URL
     ports:
