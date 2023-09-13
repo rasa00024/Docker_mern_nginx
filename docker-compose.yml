@@ -15,7 +15,7 @@ services:
     networks:
       - backend
 
-  Backend:
+  backend:
     depends_on:
       - mongodb
     build: ./Backend
@@ -34,9 +34,9 @@ services:
       - backend
       - frontend
 
-  Frontend:
+  frontend:
     depends_on:
-      - Backend
+      - backend
     build:
       context: ./Frontend
       args:
